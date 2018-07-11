@@ -21,10 +21,11 @@ Kubernetes istio bootcamp scenario-by-scenario
    * [Scenarios](#scenarios)
       * [Scenario-101: istio basic deployment](#scenario-101-istio-basic-deployment)
       * [Scenario-102: istio feature: dynamic request routing](#scenario-102-istio-feature-dynamic-request-routing)
-      * [Scenario-103: istio feature: failure management &amp; circuit breaking](#scenario-103-istio-feature-failure-management--circuit-breaking)
-      * [Scenario-104: istio feature: Authentication](#scenario-104-istio-feature-authentication)
-      * [Scenario-105: istio feature: Load Balancing](#scenario-105-istio-feature-load-balancing)
+      * [Scenario-103: istio feature: block all egress traffic by default](#scenario-103-istio-feature-block-all-egress-traffic-by-default)
+      * [Scenario-104: istio feature: authentication](#scenario-104-istio-feature-authentication)
+      * [Scenario-105: istio feature: load balancing](#scenario-105-istio-feature-load-balancing)
       * [Scenario-106: istio feature: fault injection](#scenario-106-istio-feature-fault-injection)
+      * [Scenario-107: istio feature: failure management &amp; circuit breaking](#scenario-107-istio-feature-failure-management--circuit-breaking)
    * [Highlights](#highlights)
    * [Contributors: Give People Credits](#contributors-give-people-credits)
    * [License](#license)
@@ -52,7 +53,7 @@ Deploy a micro service application with istio enabled
 - Main Tech:
 - See more: [Scenario-102](./Scenario-102)
 
-## Scenario-103: istio feature: failure management & circuit breaking
+## Scenario-103: istio feature: block all egress traffic by default
 - Requirements:
 ```
 1. 
@@ -60,7 +61,7 @@ Deploy a micro service application with istio enabled
 - Main Tech:
 - See more: [Scenario-103](./Scenario-103)
 
-## Scenario-104: istio feature: Authentication
+## Scenario-104: istio feature: authentication
 - Requirements:
 ```
 1. 
@@ -68,7 +69,7 @@ Deploy a micro service application with istio enabled
 - Main Tech:
 - See more: [Scenario-104](./Scenario-104)
 
-## Scenario-105: istio feature: Load Balancing
+## Scenario-105: istio feature: load balancing
 - Requirements:
 ```
 1. 
@@ -84,15 +85,20 @@ Deploy a micro service application with istio enabled
 - Main Tech:
 - See more: [Scenario-106](./Scenario-106)
 
+## Scenario-107: istio feature: failure management & circuit breaking
+- Requirements:
+```
+1. 
+```
+- Main Tech:
+- See more: [Scenario-107](./Scenario-107)
+
 # Highlights
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
 
 - More resources:
 ```
-https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/
-https://blog.openshift.com/kubernetes-deep-dive-code-generation-customresources/
-https://github.com/kubernetes/code-generator
-https://github.com/kubernetes/sample-controller
+https://www.youtube.com/watch?v=8OjOGJKM98o
 ```
 
 # Contributors: Give People Credits
