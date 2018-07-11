@@ -1,5 +1,6 @@
 *- mode:org; fill-column:70; coding:utf-8; -*-
 * [#A] kubernets CRD
+* TODO istio bookinfo example
 * YouTube Video
 https://www.youtube.com/watch?v=8OjOGJKM98o
 * useful link

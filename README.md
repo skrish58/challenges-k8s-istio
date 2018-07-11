@@ -22,10 +22,11 @@ Kubernetes istio bootcamp scenario-by-scenario
       * [Scenario-101: istio basic deployment](#scenario-101-istio-basic-deployment)
       * [Scenario-102: istio feature: dynamic request routing](#scenario-102-istio-feature-dynamic-request-routing)
       * [Scenario-103: istio feature: block all egress traffic by default](#scenario-103-istio-feature-block-all-egress-traffic-by-default)
-      * [Scenario-104: istio feature: authentication](#scenario-104-istio-feature-authentication)
+      * [Scenario-104: istio feature: retries failed requests](#scenario-104-istio-feature-retries-failed-requests)
       * [Scenario-105: istio feature: load balancing](#scenario-105-istio-feature-load-balancing)
       * [Scenario-106: istio feature: fault injection](#scenario-106-istio-feature-fault-injection)
       * [Scenario-107: istio feature: failure management &amp; circuit breaking](#scenario-107-istio-feature-failure-management--circuit-breaking)
+      * [Scenario-108: istio feature: authentication](#scenario-108-istio-feature-authentication)
    * [Highlights](#highlights)
    * [Contributors: Give People Credits](#contributors-give-people-credits)
    * [License](#license)
@@ -54,14 +55,14 @@ Deploy a micro service application with istio enabled
 - See more: [Scenario-102](./Scenario-102)
 
 ## Scenario-103: istio feature: block all egress traffic by default
-- Requirements:
+- Requirements: Avoid leaking information to outside by some malicious egress traffic
 ```
 1. 
 ```
 - Main Tech:
 - See more: [Scenario-103](./Scenario-103)
 
-## Scenario-104: istio feature: authentication
+## Scenario-104: istio feature: retries failed requests
 - Requirements:
 ```
 1. 
@@ -92,6 +93,14 @@ Deploy a micro service application with istio enabled
 ```
 - Main Tech:
 - See more: [Scenario-107](./Scenario-107)
+
+## Scenario-108: istio feature: authentication
+- Requirements:
+```
+1. 
+```
+- Main Tech:
+- See more: [Scenario-108](./Scenario-108)
 
 # Highlights
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
