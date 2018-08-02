@@ -25,11 +25,18 @@
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
 * My Biased Thinking About istio
+Istio helps *developers* and *operators* to change from +monolithic application+ into microservice world.
+
 - network of microservice
 - L7 firewall of microservice
 - opentracing of microservice
-- reduce the engineering effort for common API requirements: rate limiting, dynamic routing, 
-* istio
+- reduce the engineering effort for common API requirements
+#+BEGIN_EXAMPLE
+rate limiting, dynamic routing,
+circut breaking, client retries,
+unexpected outbound traffic
+#+END_EXAMPLE
+* Challenges By Scenarios
 File me [[https://github.com/DennyZhang/challenges-k8s-istio/issues][Issues]] or star [[https://github.com/DennyZhang/challenges-k8s-istio][this repo]].
 
 See more Kubernets sharing from Denny: [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
@@ -148,3 +155,4 @@ https://blog.getambassador.io/envoy-vs-nginx-vs-haproxy-why-the-open-source-amba
 * HALF istio secure & control: is like L7 firewall                 :noexport:
 * DONE istio PM has done a wonderful job: explain a complex service with 4 single words :noexport:
   CLOSED: [2018-08-01 Wed 23:12]
+* TODO How to use istio to monitor service                         :noexport:
