@@ -24,8 +24,8 @@
 
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
-* My Biased Thinking About istio
-Istio helps *developers* and *operators* to change from +monolithic application+ into microservice world.
+* My Biased Thinkings
+Istio helps *developers* and *operators* changing from +monolithic application+ into microservice world.
 
 - network of microservice
 - L7 firewall of microservice
@@ -33,9 +33,17 @@ Istio helps *developers* and *operators* to change from +monolithic application+
 - reduce the engineering effort for common API requirements
 #+BEGIN_EXAMPLE
 rate limiting, dynamic routing,
-circut breaking, client retries,
+circut breaking, 
+failure recovery/client retries,
 unexpected outbound traffic
 #+END_EXAMPLE
+* Design Highlights
+[[https://istio.io/docs/concepts/what-is-istio/#design-goals][istio design goals]]:
+
+- No code changes in our service code
+- Deploy a sidecar proxy to intercept all network traffic
+
+[[https://istio.io/docs/concepts/what-is-istio/arch.svg]]
 * Challenges By Scenarios
 File me [[https://github.com/DennyZhang/challenges-k8s-istio/issues][Issues]] or star [[https://github.com/DennyZhang/challenges-k8s-istio][this repo]].
 
@@ -156,3 +164,5 @@ https://blog.getambassador.io/envoy-vs-nginx-vs-haproxy-why-the-open-source-amba
 * DONE istio PM has done a wonderful job: explain a complex service with 4 single words :noexport:
   CLOSED: [2018-08-01 Wed 23:12]
 * TODO How to use istio to monitor service                         :noexport:
+* TODO What is Fault injection in istio?                           :noexport:
+https://istio.io/docs/concepts/what-is-istio/
