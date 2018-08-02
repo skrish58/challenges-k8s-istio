@@ -1,5 +1,5 @@
 * org-mode configuration                                           :noexport:
-#+STARTUP: overview customtime noalign logdone hidestars
+#+STARTUP: overview customtime noalign logdone showall
 #+TITLE:  Kubernets istio
 #+DESCRIPTION: 
 #+KEYWORDS: 
@@ -24,7 +24,12 @@
 
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
-* Kubernets
+* My Biased Thinking About istio
+- network of microservice
+- L7 firewall of microservice
+- opentracing of microservice
+- reduce the engineering effort for common API requirements: rate limiting, dynamic routing, 
+* istio
 File me [[https://github.com/DennyZhang/challenges-k8s-istio/issues][Issues]] or star [[https://github.com/DennyZhang/challenges-k8s-istio][this repo]].
 
 See more Kubernets sharing from Denny: [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
@@ -139,4 +144,7 @@ https://piotrminkowski.wordpress.com/2017/10/25/envoy-proxy-with-microservices/
 https://www.envoyproxy.io/docs/envoy/latest/intro/comparison
 
 https://blog.getambassador.io/envoy-vs-nginx-vs-haproxy-why-the-open-source-ambassador-api-gateway-chose-envoy-23826aed79ef
-
+* TODO istio with opentracing                                      :noexport:
+* HALF istio secure & control: is like L7 firewall                 :noexport:
+* DONE istio PM has done a wonderful job: explain a complex service with 4 single words :noexport:
+  CLOSED: [2018-08-01 Wed 23:12]
