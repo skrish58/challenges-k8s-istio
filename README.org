@@ -24,26 +24,36 @@
 
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
-* My Biased Thinkings
-Istio helps *developers* and *operators* changing from +monolithic application+ into microservice world.
+** My Biased Thinkings
+ Istio helps *developers* and *operators* changing from +monolithic application+ into microservice world.
 
-- network of microservice
-- L7 firewall of microservice
-- opentracing of microservice
-- reduce the engineering effort for common API requirements
-#+BEGIN_EXAMPLE
-rate limiting, dynamic routing,
-circut breaking, 
-failure recovery/client retries,
-unexpected outbound traffic
-#+END_EXAMPLE
-* Design Highlights
-[[https://istio.io/docs/concepts/what-is-istio/#design-goals][istio design goals]]:
+ - network of microservice
+ - L7 firewall of microservice
+ - opentracing of microservice
+ - reduce the engineering effort for common API requirements
+ #+BEGIN_EXAMPLE
+ rate limiting, dynamic routing,
+ circut breaking, 
+ failure recovery/client retries,
+ unexpected outbound traffic
+ #+END_EXAMPLE
+** Design Highlights
+ [[https://istio.io/docs/concepts/what-is-istio/#design-goals][istio design goals]]:
 
-- No code changes in our service code
-- Deploy a sidecar proxy to intercept all network traffic
+ - No code changes in our service code
+ - Deploy a sidecar proxy to intercept all network traffic
 
-[[https://istio.io/docs/concepts/what-is-istio/arch.svg]]
+ [[https://istio.io/docs/concepts/what-is-istio/arch.svg]]
+** Key Components
+https://github.com/istio/istio
+
+| Component  | Summary                                                                                                                                                                                                                                                                                                                                          |
+|------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Envoy      | Sidecar proxies per microservice to handle ingress/egress traffic between services in the cluster and from a service to external services. The proxies form a secure microservice mesh providing a rich set of functions like discovery, rich layer-7 routing, circuit breakers, policy enforcement and telemetry recording/reporting functions. |
+| Mixer      | Central component that is leveraged by the proxies and microservices to enforce policies such as authorization, rate limits, quotas, authentication, request tracing and telemetry collection.                                                                                                                                                   |
+| Pilot      | A component responsible for configuring the proxies at runtime.                                                                                                                                                                                                                                                                                  |
+| Citadel    | A centralized component responsible for certificate issuance and rotation.                                                                                                                                                                                                                                                                       |
+| Node Agent | A per-node component responsible for certificate issuance and rotation.                                                                                                                                                                                                                                                                          |
 * Challenges By Scenarios
 File me [[https://github.com/DennyZhang/challenges-k8s-istio/issues][Issues]] or star [[https://github.com/DennyZhang/challenges-k8s-istio][this repo]].
 
@@ -124,6 +134,7 @@ https://www.youtube.com/watch?v=8OjOGJKM98o
 
 - useful link
 #+BEGIN_EXAMPLE
+https://github.com/retroryan/istio-workshop
 https://istio.io/docs/concepts/what-is-istio/overview/
 https://github.com/istio/istio
 #+END_EXAMPLE
