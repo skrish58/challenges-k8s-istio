@@ -59,7 +59,8 @@ File me [[https://github.com/DennyZhang/challenges-k8s-istio/issues][Issues]] or
 
 See more Kubernets sharing from Denny: [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
 
-** Scenario-101: istio basic deployment
+** Basic Features
+*** Scenario-101: istio basic deployment
 
 Deploy a micro service application with istio enabled
 
@@ -71,61 +72,73 @@ Deploy a micro service application with istio enabled
 - Main Tech:
 - See more: [[Scenario-101][Scenario-101]]
 
-** Scenario-102: istio feature: dynamic request routing
+*** Scenario-102: istio feature: dynamic request routing
+ - Requirements:
+ #+BEGIN_EXAMPLE
+ 1. 
+ #+END_EXAMPLE
+ - Main Tech:
+ - See more: [[Scenario-102][Scenario-102]]
+
+*** Scenario-103: istio feature: block all egress traffic by default
+ - Requirements: Avoid leaking information to outside by some malicious egress traffic
+ #+BEGIN_EXAMPLE
+ 1. 
+ #+END_EXAMPLE
+ - Main Tech:
+ - See more: [[Scenario-103][Scenario-103]]
+
+*** Scenario-104: istio feature: retries failed requests
+ - Requirements:
+ #+BEGIN_EXAMPLE
+ 1. 
+ #+END_EXAMPLE
+ - Main Tech:
+ - See more: [[Scenario-104][Scenario-104]]
+
+*** Scenario-105: istio feature: load balancing
+ - Requirements:
+ #+BEGIN_EXAMPLE
+ 1. 
+ #+END_EXAMPLE
+ - Main Tech:
+ - See more: [[Scenario-105][Scenario-105]]
+
+*** Scenario-106: istio feature: fault injection
+ - Requirements:
+ #+BEGIN_EXAMPLE
+ 1. 
+ #+END_EXAMPLE
+ - Main Tech:
+ - See more: [[Scenario-106][Scenario-106]]
+
+*** Scenario-107: istio feature: failure management & circuit breaking
+ - Requirements:
+ #+BEGIN_EXAMPLE
+ 1. 
+ #+END_EXAMPLE
+ - Main Tech:
+ - See more: [[Scenario-107][Scenario-107]]
+
+*** Scenario-108: istio feature: authentication
+ - Requirements:
+ #+BEGIN_EXAMPLE
+ 1. 
+ #+END_EXAMPLE
+ - Main Tech:
+ - See more: [[Scenario-108][Scenario-108]]
+** Advanced Features
+*** Scenario-201: canary deployment with weighted routing in istio
+
+Show how canary deployments with weighted routing can be done using istio
+
 - Requirements:
 #+BEGIN_EXAMPLE
 1. 
 #+END_EXAMPLE
-- Main Tech:
-- See more: [[Scenario-102][Scenario-102]]
 
-** Scenario-103: istio feature: block all egress traffic by default
-- Requirements: Avoid leaking information to outside by some malicious egress traffic
-#+BEGIN_EXAMPLE
-1. 
-#+END_EXAMPLE
 - Main Tech:
-- See more: [[Scenario-103][Scenario-103]]
-
-** Scenario-104: istio feature: retries failed requests
-- Requirements:
-#+BEGIN_EXAMPLE
-1. 
-#+END_EXAMPLE
-- Main Tech:
-- See more: [[Scenario-104][Scenario-104]]
-
-** Scenario-105: istio feature: load balancing
-- Requirements:
-#+BEGIN_EXAMPLE
-1. 
-#+END_EXAMPLE
-- Main Tech:
-- See more: [[Scenario-105][Scenario-105]]
-
-** Scenario-106: istio feature: fault injection
-- Requirements:
-#+BEGIN_EXAMPLE
-1. 
-#+END_EXAMPLE
-- Main Tech:
-- See more: [[Scenario-106][Scenario-106]]
-
-** Scenario-107: istio feature: failure management & circuit breaking
-- Requirements:
-#+BEGIN_EXAMPLE
-1. 
-#+END_EXAMPLE
-- Main Tech:
-- See more: [[Scenario-107][Scenario-107]]
-
-** Scenario-108: istio feature: authentication
-- Requirements:
-#+BEGIN_EXAMPLE
-1. 
-#+END_EXAMPLE
-- Main Tech:
-- See more: [[Scenario-108][Scenario-108]]
+- See more: [[Scenario-201][Scenario-201]]
 * More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -177,3 +190,75 @@ https://blog.getambassador.io/envoy-vs-nginx-vs-haproxy-why-the-open-source-amba
 * TODO How to use istio to monitor service                         :noexport:
 * TODO What is Fault injection in istio?                           :noexport:
 https://istio.io/docs/concepts/what-is-istio/
+* TODO Run istio in GKE
+https://istio.io/docs/setup/kubernetes/quick-start-gke-dm/
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] Blog: Run full features of istio in minikube           :noexport:
+https://istio.io/docs/setup/kubernetes/
+
+https://istio.io/docs/setup/kubernetes/platform-setup/minikube/
+
+#+BEGIN_EXAMPLE
+ minikube start --memory=8192 --cpus=4 --kubernetes-version=v1.10.0 \
+    --extra-config=controller-manager.cluster-signing-cert-file="/var/lib/localkube/certs/ca.crt" \
+    --extra-config=controller-manager.cluster-signing-key-file="/var/lib/localkube/certs/ca.key"
+#+END_EXAMPLE
+
+- When heml is older than 2.10.0
+#+BEGIN_EXAMPLE
+kubectl apply -f install/kubernetes/helm/istio/templates/crds.yaml
+kubectl apply -f install/kubernetes/helm/istio/charts/certmanager/templates/crds.yaml
+#+END_EXAMPLE
+
+- Install with Helm via helm template
+#+BEGIN_EXAMPLE
+helm template install/kubernetes/helm/istio --name istio --namespace istio-system --set gateways.istio-ingressgateway.type=NodePort --set gateways.istio-egressgateway.type=NodePort  > $HOME/istio.yaml
+
+kubectl create namespace istio-system
+kubectl create -f $HOME/istio.yaml
+#+END_EXAMPLE
+* TODO try istio features
+** feature: traffic management
+** feature: tracing
+* TODO istio testing                                               :noexport:
+https://github.com/thesandlord/Istio101
+#+BEGIN_EXAMPLE
+   /tmp/Istio101  make get-stuff                                                                                                                                              master ✘ ✹  ✔ 0
+kubectl get pods && kubectl get svc && kubectl get ingress
+NAME                                 READY     STATUS    RESTARTS   AGE
+backend-prod-864bdc44c5-trnlx        2/2       Running   0          1m
+frontend-prod-8598d85b95-qr42g       2/2       Running   0          1m
+middleware-canary-7b74bff549-28w9m   2/2       Running   0          1m
+middleware-prod-9754595d7-qrgxw      2/2       Running   0          1m
+NAME         TYPE           CLUSTER-IP     EXTERNAL-IP      PORT(S)        AGE
+backend      ClusterIP      10.3.249.142   <none>           80/TCP         1m
+frontend     LoadBalancer   10.3.242.247   35.227.167.143   80:32726/TCP   1m
+kubernetes   ClusterIP      10.3.240.1     <none>           443/TCP        8m
+middleware   ClusterIP      10.3.245.139   <none>           80/TCP         1m
+No resources found.
+
+   /tmp/Istio101  kubectl get pods --namespace=istio-system                                                                                                                   master ✘ ✹  ✔ 0
+NAME                                      READY     STATUS    RESTARTS   AGE
+grafana-89f97d9c-gr6rs                    1/1       Running   0          5m
+istio-ca-59f6dcb7d9-sspgl                 1/1       Running   0          5m
+istio-ingress-779649ff5b-l65nt            1/1       Running   0          5m
+istio-mixer-7f4fd7dff-cvqlj               3/3       Running   0          6m
+istio-pilot-5f5f76ddc8-6t27m              2/2       Running   0          5m
+istio-sidecar-injector-7947777478-q6psb   1/1       Running   0          5m
+jaeger-deployment-559c8b9b8-vkp78         1/1       Running   0          5m
+prometheus-cf8456855-jpr4p                1/1       Running   0          5m
+servicegraph-59ff5dbbff-xqdsj             1/1       Running   0          5m
+#+END_EXAMPLE
+
+http://35.227.167.143/
+#+BEGIN_EXAMPLE
+frontend-prod - 0.411secs
+http://middleware/ -> middleware-canary - 0.384secs
+http://backend/ -> backend-prod - 0.359secs
+http://time.jsontest.com/ -> StatusCodeError: 404 - ""
+#+END_EXAMPLE
+** TODO istio egress rule
+https://istio.io/docs/tasks/traffic-management/egress/
+* TODO read istio source code                                      :noexport:
+** crd
+/Users/zdenny/Dropbox/git_code/kubernetes/community_kubernetes/istio/install/kubernetes/helm/istio/templates/crds.yaml
