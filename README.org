@@ -1,14 +1,22 @@
-* Summary
+* Kubernets istio                                                   :Concept:
+:PROPERTIES:
+:type:     isto
+:END:
+
+Blog URL: https://kubernetes.dennyzhang.com/challenges-k8s-istio, Category: [[https://kubernetes.dennyzhang.com/category/concept][concept]]
 #+BEGIN_HTML
-<a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
-<a href="https://github.com/DennyZhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
-<a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="http://slack.dennyzhang.com/badge.svg" alt="slack"/></a>
-<a href="https://github.com/DennyZhang"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<a href="https://github.com/dennyzhang/challenges-k8s-istio"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a></div>
+</div>
 
 <br/><br/>
-
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
+
 ** My Biased Thinkings
  Istio helps *developers* and *operators* changing from +monolithic application+ into microservice world.
 
@@ -41,7 +49,6 @@ https://github.com/istio/istio
 | Node Agent | A per-node component responsible for certificate issuance and rotation.                                                                                                                                                                                                                                                                          |
 * org-mode configuration                                           :noexport:
 #+STARTUP: overview customtime noalign logdone showall
-#+TITLE:  Kubernets istio
 #+DESCRIPTION: 
 #+KEYWORDS: 
 #+AUTHOR: Denny Zhang
@@ -70,7 +77,7 @@ Deploy a micro service application with istio enabled
 #+END_EXAMPLE
 
 - Main Tech:
-- See more: [[Scenario-101][Scenario-101]]
+- See more: [[https://github.com/dennyzhang/challenges-k8s-istio/tree/master/Scenario-101][Scenario-101]]
 
 *** Scenario-102: istio feature: dynamic request routing
  - Requirements:
@@ -78,15 +85,15 @@ Deploy a micro service application with istio enabled
  1. 
  #+END_EXAMPLE
  - Main Tech:
- - See more: [[Scenario-102][Scenario-102]]
+- See more: [[https://github.com/dennyzhang/challenges-k8s-istio/tree/master/Scenario-102][Scenario-102]]
 
 *** Scenario-103: istio feature: block all egress traffic by default
  - Requirements: Avoid leaking information to outside by some malicious egress traffic
  #+BEGIN_EXAMPLE
  1. 
  #+END_EXAMPLE
- - Main Tech:
- - See more: [[Scenario-103][Scenario-103]]
+- Main Tech:
+- See more: [[https://github.com/dennyzhang/challenges-k8s-istio/tree/master/Scenario-103][Scenario-103]]
 
 *** Scenario-104: istio feature: retries failed requests
  - Requirements:
@@ -94,7 +101,7 @@ Deploy a micro service application with istio enabled
  1. 
  #+END_EXAMPLE
  - Main Tech:
- - See more: [[Scenario-104][Scenario-104]]
+ - See more: [[https://github.com/dennyzhang/challenges-k8s-istio/tree/master/Scenario-104][Scenario-104]]
 
 *** Scenario-105: istio feature: load balancing
  - Requirements:
@@ -102,7 +109,7 @@ Deploy a micro service application with istio enabled
  1. 
  #+END_EXAMPLE
  - Main Tech:
- - See more: [[Scenario-105][Scenario-105]]
+ - See more: [[https://github.com/dennyzhang/challenges-k8s-istio/tree/master/Scenario-105][Scenario-105]]
 
 *** Scenario-106: istio feature: fault injection
  - Requirements:
@@ -110,7 +117,7 @@ Deploy a micro service application with istio enabled
  1. 
  #+END_EXAMPLE
  - Main Tech:
- - See more: [[Scenario-106][Scenario-106]]
+ - See more: [[https://github.com/dennyzhang/challenges-k8s-istio/tree/master/Scenario-106][Scenario-106]]
 
 *** Scenario-107: istio feature: failure management & circuit breaking
  - Requirements:
@@ -118,7 +125,7 @@ Deploy a micro service application with istio enabled
  1. 
  #+END_EXAMPLE
  - Main Tech:
- - See more: [[Scenario-107][Scenario-107]]
+ - See more: [[https://github.com/dennyzhang/challenges-k8s-istio/tree/master/Scenario-107][Scenario-107]]
 
 *** Scenario-108: istio feature: authentication
  - Requirements:
@@ -126,7 +133,7 @@ Deploy a micro service application with istio enabled
  1. 
  #+END_EXAMPLE
  - Main Tech:
- - See more: [[Scenario-108][Scenario-108]]
+ - See more: [[https://github.com/dennyzhang/challenges-k8s-istio/tree/master/Scenario-108][Scenario-108]]
 ** Advanced Features
 *** Scenario-201: canary deployment with weighted routing in istio
 
@@ -138,7 +145,7 @@ Show how canary deployments with weighted routing can be done using istio
 #+END_EXAMPLE
 
 - Main Tech:
-- See more: [[Scenario-201][Scenario-201]]
+- See more: [[https://github.com/dennyzhang/challenges-k8s-istio/tree/master/Scenario-201][Scenario-201]]
 * More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -159,7 +166,7 @@ https://github.com/istio/istio
 #+END_HTML
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * local notes                                                      :noexport:
-You add Istio support to services by deploying a special sidecar proxy throughout your environment that intercepts all network communication between microservices, configured and managed using Istio’s control plane functionality.
+You add Istio support to services by deploying a special sidecar proxy throughout your environment that intercepts all network communication between microservices, configured and managed using Istio's control plane functionality.
 
 Istio addresses many of the challenges faced by developers and operators as monolithic applications transition towards a distributed microservice architecture.
 ** TODO istio bookinfo example
@@ -171,12 +178,12 @@ Istio addresses many of the challenges faced by developers and operators as mono
 - Unlike the nginx/haproxy, Envoy is not owned by any single commercial entity. 
   As such, the community focuses only on the right features with the best code, without any commercial considerations. 
 
-- nginx has far more overall features than Envoy as an edge reverse proxy, though we think that most modern service oriented architectures don’t typically make use of them.
+- nginx has far more overall features than Envoy as an edge reverse proxy, though we think that most modern service oriented architectures don't typically make use of them.
 
 - Envoy provides the following main advantages over nginx as an edge proxy:
   https://www.envoyproxy.io/docs/envoy/latest/intro/comparison#id1
 
-‘Envoy is an open source edge and service proxy, designed for cloud-native applications’. It was originally developed by Lift as a high performance C++ distributed proxy designed for standalone services and applications, as well as for large microservices service mesh.
+'Envoy is an open source edge and service proxy, designed for cloud-native applications'. It was originally developed by Lift as a high performance C++ distributed proxy designed for standalone services and applications, as well as for large microservices service mesh.
 
 https://piotrminkowski.wordpress.com/2017/10/25/envoy-proxy-with-microservices/
 
