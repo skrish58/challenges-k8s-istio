@@ -1,4 +1,4 @@
-* Kubernets istio                                                   :Concept:
+* Kubernets Istio                                                   :Concept:
 :PROPERTIES:
 :type:     isto
 :END:
