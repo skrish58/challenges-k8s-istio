@@ -3,7 +3,6 @@
 :type:     isto
 :END:
 
-Blog URL: https://kubernetes.dennyzhang.com/challenges-k8s-istio, Category: [[https://kubernetes.dennyzhang.com/category/concept][concept]]
 #+BEGIN_HTML
 <a href="https://github.com/dennyzhang/challenges-k8s-istio"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
 
@@ -16,6 +15,8 @@ Blog URL: https://kubernetes.dennyzhang.com/challenges-k8s-istio, Category: [[ht
 <br/><br/>
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
+
+Blog URL: https://kubernetes.dennyzhang.com/challenges-k8s-istio, Category: [[https://kubernetes.dennyzhang.com/category/concept][concept]]
 
 ** My Biased Thinkings
  Istio helps *developers* and *operators* changing from +monolithic application+ into microservice world.
@@ -30,6 +31,8 @@ Blog URL: https://kubernetes.dennyzhang.com/challenges-k8s-istio, Category: [[ht
  failure recovery/client retries,
  unexpected outbound traffic
  #+END_EXAMPLE
+** Question
+*** Does istio need networkpolicy support to enforce it's traffic control?
 ** Design Highlights
  [[https://istio.io/docs/concepts/what-is-istio/#design-goals][istio design goals]]:
 
@@ -269,3 +272,4 @@ https://istio.io/docs/tasks/traffic-management/egress/
 * TODO read istio source code                                      :noexport:
 ** crd
 /Users/zdenny/Dropbox/git_code/kubernetes/community_kubernetes/istio/install/kubernetes/helm/istio/templates/crds.yaml
+* TODO How istio hijack my traffic                                 :noexport:
